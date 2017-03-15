@@ -14,33 +14,37 @@ import javafx.stage.Stage;
  * @author paul
  */
 public class ksp extends Application{
-    public TextField targetPeriapsisField;
-    public TextField targetApoapsisField;
-    public TextField controllingApoapsisField;
-    public TextField controllingPeriapsisField;
-    public TextField deltaVField;
-    public TextField phaseAngleField;
-    public SplitMenuButton targetParaUnitSelector;
+    private TextField targetPeriapsisField;
+    private TextField targetApoapsisField;
+    private TextField controllingApoapsisField;
+    private TextField controllingPeriapsisField;
+    private TextField deltaVField;
+    private TextField phaseAngleField;
+    private SplitMenuButton targetParaUnitSelector;
     public SplitMenuButton targetApoUnitSelector;
-    public SplitMenuButton controllingParaUnitSelector;
+    private SplitMenuButton controllingParaUnitSelector;
     public SplitMenuButton controllingApoUnitSelector;
 
-    OrbitCalculator orbitCalculator = new OrbitCalculator();
+    private final OrbitCalculator orbitCalculator = new OrbitCalculator();
 
     private static final double G = 6.674e-11;
 
-    public void displaySGP(ActionEvent actionEvent) {
-        System.out.println(Planet.KERBIN.standardGravitationalParameter);
-    }
+// --Commented out by Inspection START (15/03/2017 19:31):
+//    public void displaySGP(ActionEvent actionEvent) {
+//        System.out.println(Planet.KERBIN.standardGravitationalParameter);
+//    }
+// --Commented out by Inspection STOP (15/03/2017 19:31)
     // TODO: 02/08/2016 Learn more about using theses words to complete code faster eg (sout etc.)
 
     public enum Planet{
-        KERBIN(5.2915793e22,600000), DUNA(4.5154812e21,320000), MUN(9.7600236e20,200000), MINMUS(2.6457897e19,60000);
-        final double mass;
+        KERBIN(5.2915793e22,600000);
+        
+        // --Commented out by Inspection (15/03/2017 19:31):DUNA(4.5154812e21,320000), // --Commented out by Inspection (15/03/2017 19:31):MUN(9.7600236e20,200000), // --Commented out by Inspection (15/03/2017 19:31):MINMUS(2.6457897e19,60000);
+        // --Commented out by Inspection (15/03/2017 19:31):final double mass;
         final double radius;
         final double standardGravitationalParameter;
         Planet(double mass, double radius){
-            this.mass = mass;
+           // this.mass = mass;
             this.radius = radius;
             this.standardGravitationalParameter = mass*G;
         }

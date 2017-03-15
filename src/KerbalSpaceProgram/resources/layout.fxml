@@ -1,137 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
-
-<TabPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KerbalSpaceProgram.ksp">
-  <tabs>
+<TabPane id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="KerbalSpaceProgram.ksp">
     <Tab closable="false" text="Satelite Intercepts">
-         <content>
-            <SplitPane dividerPositions="0.21024258760107817" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
-              <items>
-                  <SplitPane dividerPositions="0.45" prefHeight="160.0" prefWidth="200.0">
-                    <items>
-                        <GridPane prefHeight="371.0" prefWidth="294.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="0.0" prefWidth="111.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="127.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="0.0" prefWidth="66.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints maxHeight="116.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="148.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="240.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="108.0" text="Periapsis Altitude" GridPane.rowIndex="1" />
-                              <TextField fx:id="controllingPeriapsisField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Apoapsis Altitude" GridPane.rowIndex="2" />
-                              <TextField fx:id="controllingApoapsisField" editable="false" text="Currently unused" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label prefHeight="17.0" prefWidth="294.0" text="Controlling Space Craft" GridPane.columnSpan="2147483647">
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                              <SplitMenuButton fx:id="controllingParaUnitSelector" mnemonicParsing="false" text="km" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="km" />
-                                  <MenuItem mnemonicParsing="false" text="m" />
-                                </items>
-                              </SplitMenuButton>
-                              <SplitMenuButton fx:id="controllingApoUnitSelector" mnemonicParsing="false" text="km" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="km" />
-                                  <MenuItem mnemonicParsing="false" text="m" />
-                                </items>
-                              </SplitMenuButton>
-                           </children>
-                        </GridPane>
-                        <GridPane prefHeight="371.0" prefWidth="294.0">
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="108.0" text="Periapsis Altitude" GridPane.rowIndex="1" />
-                              <TextField fx:id="targetPeriapsisField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Label text="Apoapsiss Altitude" GridPane.rowIndex="2" />
-                              <TextField fx:id="targetApoapsisField" editable="false" text="Currently unused" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label text="Target Craft">
-                                 <padding>
-                                    <Insets left="10.0" />
-                                 </padding>
-                              </Label>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647">
-                                 <children>
-                                    <Label text="Planet of Orbit" />
-                                    <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Kerbin">
-                                      <items>
-                                        <MenuItem mnemonicParsing="false" text="Action 1" />
-                                        <MenuItem mnemonicParsing="false" text="Action 2" />
-                                      </items>
-                                       <padding>
-                                          <Insets left="10.0" />
-                                       </padding>
-                                    </SplitMenuButton>
-                                 </children>
-                              </HBox>
-                              <SplitMenuButton fx:id="targetParaUnitSelector" mnemonicParsing="false" text="km" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="km" />
-                                    <MenuItem mnemonicParsing="false" text="m" />
-                                 </items>
-                              </SplitMenuButton>
-                              <SplitMenuButton fx:id="targetApoUnitSelector" mnemonicParsing="false" text="km" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="km" />
-                                    <MenuItem mnemonicParsing="false" text="m" />
-                                 </items>
-                              </SplitMenuButton>
-                           </children>
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="0.0" prefWidth="111.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="162.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="86.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="116.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="148.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="240.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                        </GridPane>
-                    </items>
-                  </SplitPane>
-                  <HBox prefHeight="309.0" prefWidth="600.0">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#calculateIntercepts" text="Calculate " />
-                              <Label text="Required Delta V" />
-                              <TextField fx:id="deltaVField" editable="false" />
-                              <Label text="Phase Angle" />
-                              <TextField fx:id="phaseAngleField" editable="false" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-              </items>
+        <SplitPane dividerPositions="0.21024258760107817" orientation="VERTICAL" prefHeight="200.0"
+                   prefWidth="160.0">
+            <SplitPane dividerPositions="0.45" prefHeight="160.0" prefWidth="200.0">
+                <GridPane prefHeight="371.0" prefWidth="294.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="0.0" prefWidth="111.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0"
+                                           prefWidth="127.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="0.0" prefWidth="66.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="116.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="148.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="240.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <Label prefHeight="17.0" prefWidth="108.0" text="Periapsis Altitude" GridPane.rowIndex="1"/>
+                    <TextField fx:id="controllingPeriapsisField" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                    <Label text="Apoapsis Altitude" GridPane.rowIndex="2"/>
+                    <TextField fx:id="controllingApoapsisField" editable="false" text="Currently unused"
+                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Label prefHeight="17.0" prefWidth="294.0" text="Controlling Space Craft"
+                           GridPane.columnSpan="2147483647">
+                        <padding>
+                            <Insets left="10.0"/>
+                        </padding>
+                    </Label>
+                    <SplitMenuButton fx:id="controllingParaUnitSelector" mnemonicParsing="false" text="km"
+                                     GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="km"/>
+                            <MenuItem mnemonicParsing="false" text="m"/>
+                        </items>
+                    </SplitMenuButton>
+                    <SplitMenuButton fx:id="controllingApoUnitSelector" mnemonicParsing="false" text="km"
+                                     GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="km"/>
+                            <MenuItem mnemonicParsing="false" text="m"/>
+                        </items>
+                    </SplitMenuButton>
+                </GridPane>
+                <GridPane prefHeight="371.0" prefWidth="294.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="0.0" prefWidth="111.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0"
+                                           prefWidth="162.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="297.0" minWidth="10.0" prefWidth="86.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="116.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="148.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="240.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <Label prefHeight="17.0" prefWidth="108.0" text="Periapsis Altitude" GridPane.rowIndex="1"/>
+                    <TextField fx:id="targetPeriapsisField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="Apoapsiss Altitude" GridPane.rowIndex="2"/>
+                    <TextField fx:id="targetApoapsisField" editable="false" text="Currently unused"
+                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    <Label text="Target Craft">
+                        <padding>
+                            <Insets left="10.0"/>
+                        </padding>
+                    </Label>
+                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1"
+                          GridPane.columnSpan="2147483647">
+                        <Label text="Planet of Orbit"/>
+                        <SplitMenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0"
+                                         text="Kerbin">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1"/>
+                                <MenuItem mnemonicParsing="false" text="Action 2"/>
+                            </items>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </SplitMenuButton>
+                    </HBox>
+                    <SplitMenuButton fx:id="targetParaUnitSelector" mnemonicParsing="false" text="km"
+                                     GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="km"/>
+                            <MenuItem mnemonicParsing="false" text="m"/>
+                        </items>
+                    </SplitMenuButton>
+                    <SplitMenuButton fx:id="targetApoUnitSelector" mnemonicParsing="false" text="km"
+                                     GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <items>
+                            <MenuItem mnemonicParsing="false" text="km"/>
+                            <MenuItem mnemonicParsing="false" text="m"/>
+                        </items>
+                    </SplitMenuButton>
+                </GridPane>
             </SplitPane>
-         </content>
+            <HBox prefHeight="309.0" prefWidth="600.0">
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <Button mnemonicParsing="false" onAction="#calculateIntercepts" text="Calculate "/>
+                    <Label text="Required Delta V"/>
+                    <TextField fx:id="deltaVField" editable="false"/>
+                    <Label text="Phase Angle"/>
+                    <TextField fx:id="phaseAngleField" editable="false"/>
+                </VBox>
+            </HBox>
+        </SplitPane>
     </Tab>
     <Tab closable="false" text="Kerbal Rocket Design">
-      <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ImageView cacheHint="ROTATE" fitHeight="371.0" fitWidth="643.0" layoutX="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@KSPDVMAP.png" />
-                     </image></ImageView>
-               </children></AnchorPane>
-      </content>
+            <ImageView cacheHint="ROTATE" fitHeight="371.0" fitWidth="643.0" layoutX="38.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@KSPDVMAP.png"/>
+            </ImageView>
+        </AnchorPane>
     </Tab>
-      <Tab text="Interplanetary Transfers">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-        </content>
-      </Tab>
-  </tabs>
+    <Tab text="Interplanetary Transfers">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+    </Tab>
 </TabPane>

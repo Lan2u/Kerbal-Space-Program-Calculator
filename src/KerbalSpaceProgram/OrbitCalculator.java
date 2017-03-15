@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- * Created by paul on 08/08/2016.
+ * Created by Paul Lancaster on 08/08/2016
+ *
+ * @author paul
  */
 class OrbitCalculator {
     /*
@@ -28,14 +30,14 @@ class OrbitCalculator {
         T = Period (s)
 
     */
-
-    OrbitCalculator(){
-
+    
+    OrbitCalculator() {
+        
     }
-
+    
     // Returns first the phase angle and then the delta V required rounded to 1 decimal place
     // Radii must be in meters
-    double[] calculateIntercept(ksp.Planet planet, double r1, double r2){
+    double[] calculateIntercept(ksp.Planet planet, double r1, double r2) {
         // r1 = initial radius of circular orbit
         // r2 = the targets radius of circular orbit
         // SGP = standard gravitation parameter = GM and is different for each astronomical body
@@ -45,18 +47,18 @@ class OrbitCalculator {
         r2 = r2 + planet.radius;
         
         // TODO Trying (360 - ) rather than (180 - ) because otherwise following the kerbal engineer readout you (might? not tested) burn at the wrong time
-        double phaseAngle = 360 - (Math.sqrt(SGP/Math.pow(r2, 3)) * Math.PI * Math.sqrt(Math.pow((r1 + r2),3)/(8 * SGP)));
-        double deltaV = Math.sqrt(SGP/r1) * (Math.sqrt((2 * r2)/(r1+r2)) - 1);
-
+        double phaseAngle = 360 - (Math.sqrt(SGP / Math.pow(r2, 3)) * Math.PI * Math.sqrt(Math.pow((r1 + r2), 3) / (8 * SGP)));
+        double deltaV = Math.sqrt(SGP / r1) * (Math.sqrt((2 * r2) / (r1 + r2)) - 1);
+        
         // Round the values to 1 decimal place
-        phaseAngle = round(phaseAngle,1);
-        deltaV = round(deltaV,1);
-
-       // System.out.println("Radius 1 " + r1 + " , Radius 2 " + r2 + " SGP " + SGP + " phaseAngle " + phaseAngle + " delta V " + deltaV);
-        return new double[]{deltaV,phaseAngle};
+        phaseAngle = round(phaseAngle, 1);
+        deltaV = round(deltaV, 1);
+        
+        // System.out.println("Radius 1 " + r1 + " , Radius 2 " + r2 + " SGP " + SGP + " phaseAngle " + phaseAngle + " delta V " + deltaV);
+        return new double[]{deltaV, phaseAngle};
     }
-
-    private double round(double value, int decimalPlaces){
+    
+    private double round(double value, int decimalPlaces) {
         // Rounds a double value to the specified decimal places
         return new BigDecimal(value).setScale(decimalPlaces, RoundingMode.HALF_UP).doubleValue();
     }
